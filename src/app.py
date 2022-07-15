@@ -7,9 +7,9 @@ def search():
     args = request.args
     var1 = args.get('word')
     if var1:
-        file = open("word.txt", "a")
+        file = open("../data/word.txt", "a")
         file.write(var1+'\n')
         file.close
         return f'{var1}'
     else:
-        return f'{os.environ["RESPONCE"]}'
+        return f'{os.environ["PROCESSOR_ARCHITECTURE"]}'
