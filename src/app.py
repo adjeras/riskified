@@ -1,7 +1,15 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
+import os
 
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+@app.route('/messages', methods=['GET'])
+def search():
+    args = request.args
+    var1 = args.get('word')
+    if var1:
+        file = open("word.txt", "a")
+        file.write(var1+'\n')
+        file.close
+        return f'{var1}'
+    else:
+        return f'{os.environ["RESPONCE"]}'
