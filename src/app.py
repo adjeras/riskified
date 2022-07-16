@@ -12,4 +12,7 @@ def search():
         file.close
         return f'{var1}'
     else:
-        return f'{os.environ["PROCESSOR_ARCHITECTURE"]}'
+        return f'{os.environ["RESPONCE"]}'
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
